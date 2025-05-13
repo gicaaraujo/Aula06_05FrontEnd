@@ -5,7 +5,7 @@ function adicionarTarefa() {
     };
 
     $.ajax({
-        url: '/tarefa/',
+        url: '/tarefas/',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify(tarefa),
@@ -18,7 +18,7 @@ function adicionarTarefa() {
 
 function carregarTarefas() {
     $.ajax({
-        url: '/tarefa/',
+        url: '/tarefas/',
         type: 'GET',
         success: function(tarefas) {
             let lista = '';
@@ -42,7 +42,7 @@ function carregarTarefas() {
 function excluirTarefa(id){
 	if(confirm("Tem certeza que deseja excluir esta tarefa?")) {
 		$.ajax({
-			url: `/tarefa/${id}`,
+			url: `/tarefas/${id}`,
 			type: 'DELETE',
 			success: function (){
 				carregarTarefas();

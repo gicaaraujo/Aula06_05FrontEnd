@@ -20,7 +20,7 @@ import com.Response.Service.TarefaService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping(value ="/tarefa")
+@RequestMapping("/tarefas")
 public class TarefaController {
 	
 	 private final TarefaService tarefaService;
@@ -40,7 +40,7 @@ public class TarefaController {
 	        }
 	    }
 
-	    @GetMapping
+	    @GetMapping("/")
 	    public ResponseEntity<List<Tarefas>> getAllTarefas() {
 	        List<Tarefas> tarefa = tarefaService.getAllTarefas();
 	        return ResponseEntity.ok(tarefa);
